@@ -21,8 +21,8 @@ def main(num_imgs_max=50, debug=True):
     num_imgs = 0
     time.sleep(2)
 
+    print('Now watching!')
     while num_imgs < num_imgs_max:
-        print('Now watching!')
         ret, frame = video_capture.read()
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         faces = FACE_CASCADE.detectMultiScale(
