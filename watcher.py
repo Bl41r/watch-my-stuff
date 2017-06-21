@@ -11,16 +11,17 @@ CASCADE_MODEL = 'haarcascade_frontalface_default.xml'
 FACE_CASCADE = cv2.CascadeClassifier(CASCADE_MODEL)
 
 
-def main(debug=True):
+def main(num_imgs_max=50, debug=True):
     """Watch over my desk with vigilence."""
     print('Initializing...')
     video_capture = cv2.VideoCapture(0)
     video_capture.set(3, 640)
     video_capture.set(4, 480)
     x = 0
+    num_imgs = 0
     time.sleep(2)
 
-    while True:
+    while num_imgs < num_imgs_max:
         print('Now watching!')
         ret, frame = video_capture.read()
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -42,6 +43,7 @@ def main(debug=True):
                 os.path.join('img', str(dt.datetime.now()) + '.png'),
                 gray
             )
+            num_imgs += 1
 
         if debug:
             cv2.imshow('frame', gray)
