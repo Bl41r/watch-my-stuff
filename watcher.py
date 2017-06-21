@@ -37,6 +37,7 @@ def main(debug=True):
 
         if len(faces) == 1:
             time.sleep(1)
+            print('face found!')
             cv2.imwrite(
                 os.path.join('img', str(dt.datetime.now()) + '.png'),
                 gray
