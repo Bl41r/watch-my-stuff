@@ -11,14 +11,15 @@ such as a Raspberry Pi with a webcam, to monitor my desk.  It will take a
 picture of anyone's face who comes within the field of view of the webcam.
 
 ## Installation
-- install OpenCV (google how to do this)
+- install OpenCV on your Raspberry Pi with the virtual environment
+(http://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/)
 - clone the repo
 - cd into the project directory
-- create and activate a virtual environment (or just use the same one you
-are using for OpenCV if you installed it using a virtual environment)
+- activate a virtual environment (the same one you
+are using for OpenCV)
 ```
-python3 -m venv ENV
-source ENV/bin/activate
+source ~/.profile
+workon cv
 ```
 - install requirements
 ```
@@ -29,5 +30,5 @@ pip install -r requirements.txt
 python3 watcher.py
 ```
 - profit
-- pictures will be saved in an IMG directory, with the timestamp as the
+- pictures will be saved in the img directory, with the timestamp as the
 filename
