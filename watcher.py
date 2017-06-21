@@ -49,11 +49,11 @@ def main(debug=True):
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
-        if debug:
+    if debug:
+        cv2.waitKey(1)
+        cv2.destroyAllWindows()
+        for i in range(5):
             cv2.waitKey(1)
-            cv2.destroyAllWindows()
-            for i in range(5):
-                cv2.waitKey(1)
 
 if __name__ == '__main__':
     main(debug=True)
